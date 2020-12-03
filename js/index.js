@@ -21,4 +21,11 @@ function handleTodo(event) {
 
     $input.value = '';
   }
+
+}
+
+$todoList.addEventListener('click',toggleItem);
+
+function toggleItem(e){
+  e.target.closest('li').classList.toggle('completed');
 }
