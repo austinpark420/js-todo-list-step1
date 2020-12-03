@@ -1,9 +1,24 @@
 const $input = document.getElementById('new-todo-title');
+const $todoList = document.getElementById('todo-list');
 
 $input.addEventListener('keyup', handleTodo);
 
-function handleTodo(e) {
-  console.log(e);
-}
+function handleTodo(event) {
+  console.log(event);
+  const text = event.target.value;
 
-console.log('gg');
+  if (event.key === 'Enter') {
+    $todoList.innerHTML += `
+    <li>
+      <div class="view">
+        <input class="toggle" type="checkbox">
+        <label class="label">${text}</label>
+        <button class="destroy"></button>
+      </div>
+      <input class="edit" value={text}>
+    </li>
+    `;
+
+    $input.value = '';
+  }
+}
