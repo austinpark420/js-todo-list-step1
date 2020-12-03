@@ -27,5 +27,6 @@ function handleTodo(event) {
 $todoList.addEventListener('click',toggleItem);
 
 function toggleItem(e){
+  console.log(e.target.closest('li'));
   e.target.closest('li').classList.toggle('completed');
 }
